@@ -11,11 +11,12 @@
       href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -26,339 +27,423 @@
               sans: ['"Plus Jakarta Sans"', 'sans-serif'],
               arabic: ['"Amiri"', 'serif'],
             },
+            animation: {
+              float: 'float 4s ease-in-out infinite',
+              'spin-slow': 'spin 8s linear infinite',
+              'bounce-high': 'bounceHigh 2s infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-15px)' },
+              },
+              bounceHigh: {
+                '0%, 100%': {
+                  transform: 'translateY(0)',
+                  animationTimingFunction: 'cubic-bezier(0.8,0,1,1)',
+                },
+                '50%': {
+                  transform: 'translateY(-25px)',
+                  animationTimingFunction: 'cubic-bezier(0,0,0.2,1)',
+                },
+              },
+            },
           },
         },
       };
     </script>
+
+    <style>
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f5f9;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+    </style>
   </head>
   <body
-    class="bg-gray-50 text-gray-800 antialiased leading-relaxed min-h-screen"
+    class="bg-gray-50 text-gray-800 antialiased leading-relaxed min-h-screen relative overflow-x-hidden"
   >
-    <nav
-      class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200"
-    >
-      <div
-        class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center"
+    <div id="main-wrapper" class="transition-opacity duration-1000">
+      <nav
+        class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200 shadow-sm"
+        id="navbar"
       >
-        <div class="font-bold text-xl tracking-tight text-gray-900">LAM.</div>
         <div
-          class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors"
+          class="max-w-5xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center"
         >
-          NIM: 312310745
-        </div>
-      </div>
-    </nav>
-
-    <header class="max-w-5xl mx-auto px-6 pt-16 pb-12">
-      <div class="space-y-6">
-        <div>
-          <span
-            class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold uppercase tracking-wider mb-4"
+          <div
+            class="font-bold text-lg sm:text-xl tracking-tight text-gray-900 flex items-center gap-2"
           >
-            <i class="fa-solid fa-book-open mr-1"></i> Kumpulan Tugas
-          </span>
-          <h1
-            class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight"
-          >
-            Halo, Saya Luthfi Ammar Musthofa.
-          </h1>
-          <p class="text-lg text-gray-600 max-w-2xl mt-4">
-            Ini adalah halaman repositori tugas perkuliahan saya.
-          </p>
-        </div>
-
-        <div
-          class="inline-flex flex-col sm:flex-row sm:items-center gap-4 text-sm text-gray-700 bg-white p-4 rounded-xl border border-gray-200 shadow-sm mt-4"
-        >
-          <div class="flex items-center gap-2">
-            <i class="fa-solid fa-graduation-cap text-blue-600 text-lg"></i>
-            <span class="font-medium text-gray-900">Mata Kuliah:</span>
-            Pendidikan Agama 6
-          </div>
-          <div class="hidden sm:block w-px h-4 bg-gray-300"></div>
-          <div class="flex items-center gap-2">
-            <i class="fa-solid fa-user-tie text-blue-600 text-lg"></i>
-            <span class="font-medium text-gray-900">Dosen Pengampu:</span> Ir.
-            M. Zubair Abdurrohman, S.T., M.T.
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <main class="max-w-5xl mx-auto px-6 pb-24">
-      <article
-        class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12"
-      >
-        <header class="mb-8 border-b border-gray-100 pb-8">
-          <div class="text-sm text-gray-500 mb-2">
-            <i class="fa-solid fa-file-pen mr-1"></i> Tugas 1 • Pendidikan Agama
-            6
-          </div>
-          <h2 class="text-3xl font-bold text-gray-900 leading-tight">
-            Studi Kasus: Praktik Pembatal Syahadatain di Era Digital (Ramalan
-            Zodiak & Tarot Online)
-          </h2>
-        </header>
-
-        <div
-          class="prose prose-lg prose-blue max-w-none text-gray-700 space-y-6"
-        >
-          <h3 class="text-xl font-semibold text-gray-900">
-            Konteks Kasus di Internet
-          </h3>
-          <p>
-            Di era media sosial saat ini (terutama TikTok, Twitter/X, dan
-            Instagram), sangat marak bermunculan akun-akun yang menawarkan jasa
-            ramalan nasib, asmara, dan karir menggunakan kartu tarot atau
-            pembacaan zodiak secara <i>online</i>. Banyak pengguna internet yang
-            percaya dan menjadikan ramalan tersebut sebagai patokan dalam
-            mengambil keputusan hidup, bahkan tidak sedikit yang rela membayar
-            untuk "dibacakan" masa depannya.
-          </p>
-
-          <h3 class="text-xl font-semibold text-gray-900 mt-8">
-            Alasan Mengapa Ini Membatalkan Syahadat
-          </h3>
-          <p>
-            Praktik dan kepercayaan terhadap ramalan zodiak maupun tarot online
-            termasuk ke dalam bentuk
-            <strong>perdukunan modern</strong> (Kahanah/Tanjim). Hal ini sangat
-            berbahaya dan dapat membatalkan syahadat karena menyentuh ranah
-            kesyirikan, dengan alasan:
-          </p>
-          <ul class="list-disc pl-5 space-y-2">
-            <li>
-              <strong>Mengklaim Ilmu Ghaib:</strong> Hanya Allah yang mengetahui
-              perkara ghaib (masa depan). Mempercayai ada entitas, benda
-              (kartu), atau bintang yang mengetahui masa depan berarti
-              menyekutukan Allah dalam sifat <i>Rububiyah</i> dan kekuasaan-Nya.
-            </li>
-            <li>
-              <strong>Ketergantungan Hati Selain kepada Allah:</strong>
-              Seseorang yang berpatokan pada ramalan akan menggantungkan rasa
-              takut, harap, dan tawakalnya kepada selain Allah, yang mencederai
-              tauhid <i>Uluhiyah</i>.
-            </li>
-          </ul>
-
-          <h3 class="text-xl font-semibold text-gray-900 mt-8">
-            Landasan dan Dalil
-          </h3>
-
-          <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 mt-4">
-            <h4 class="font-semibold text-gray-900 mb-4">
-              1. Al-Qur'an (Surah An-Naml Ayat 65)
-            </h4>
-
-            <p
-              dir="rtl"
-              class="font-arabic text-3xl text-gray-800 leading-loose mb-4 text-right"
+            <div
+              class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 text-white flex items-center justify-center text-sm shadow-inner shrink-0"
             >
-              قُل لَّا يَعْلَمُ مَن فِى ٱلسَّمَٰوَٰتِ وَٱلْأَرْضِ ٱلْغَيْبَ
-              إِلَّا ٱللَّهُ ۚ وَمَا يَشْعُرُونَ أَيَّانَ يُبْعَثُونَ
-            </p>
-
-            <p class="italic text-gray-600 mb-2">
-              "Katakanlah: 'Tidak ada seorangpun di langit dan di bumi yang
-              mengetahui perkara yang ghaib, kecuali Allah', dan mereka tidak
-              mengetahui bila mereka akan dibangkitkan."
-            </p>
-            <p class="text-sm">
-              Ayat ini menegaskan otoritas mutlak Allah atas hal-hal yang belum
-              terjadi.
-            </p>
+              LM
+            </div>
+            <span class="hidden sm:block">Portofolio</span>
           </div>
-
-          <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 mt-4">
-            <h4 class="font-semibold text-gray-900 mb-2">
-              2. Hadits Riwayat Ahmad dan Al-Hakim
-            </h4>
-            <p class="italic text-gray-600 mb-2">
-              "Barangsiapa yang mendatangi dukun atau peramal, lalu membenarkan
-              apa yang dikatakannya, maka sungguh ia telah kufur terhadap apa
-              yang diturunkan kepada Muhammad (Al-Qur'an)."
-            </p>
-            <p class="text-sm">
-              Hadits ini secara eksplisit menjelaskan konsekuensi membenarkan
-              peramal nasib, yaitu kekufuran yang dapat membatalkan keislaman
-              (syahadat) seseorang.
-            </p>
+          <div class="flex items-center gap-3 sm:gap-4">
+            <div class="hidden md:block text-sm font-medium text-gray-500">
+              NIM: 312310745
+            </div>
+            <a
+              href="https://luthfiammar.my.id"
+              target="_blank"
+              class="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-white border border-gray-200 text-gray-700 text-xs sm:text-sm font-semibold rounded-lg hover:bg-blue-50 hover:text-blue-700 hover:border-blue-200 transition-all shadow-sm"
+            >
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              <span class="hidden sm:inline">Web Utama</span
+              ><span class="sm:hidden">Web</span>
+            </a>
           </div>
-
-          <h3 class="text-xl font-semibold text-gray-900 mt-8">Kesimpulan</h3>
-          <p>
-            Sebagai muslim di era digital, kita harus sangat berhati-hati dalam
-            memfilter konten hiburan. Apa yang sering dianggap sebagai "tren"
-            atau sekadar "seru-seruan" (seperti membaca zodiak), pada hakikatnya
-            bisa merusak fondasi keimanan yang paling dasar, yaitu Syahadatain.
-          </p>
         </div>
+      </nav>
 
-        <!-- Tugas 5 -->
-        <header class="mt-12 mb-8 border-b border-gray-100 pb-8">
-          <div class="text-sm text-gray-500 mb-2">
-            <i class="fa-solid fa-file-pen mr-1"></i> Tugas 5 • Pendidikan Agama
-          </div>
-          <h2 class="text-3xl font-bold text-gray-900 leading-tight">
-            Kisah Ashabul Kahfi: Perjalanan Iman Pemuda Gua dan Keajaiban 309
-            Tahun
-          </h2>
-        </header>
-
-        <div
-          class="prose prose-lg prose-blue max-w-none text-gray-700 space-y-6"
+      <div
+        class="max-w-5xl mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-6"
+        data-aos="fade-up"
+      >
+        <header
+          class="bg-white rounded-2xl sm:rounded-3xl border border-gray-100 shadow-sm p-6 sm:p-8 md:p-12 relative overflow-hidden"
         >
-          <p>
-            Al-Qur'an tidak sekadar berisi aturan hukum, melainkan juga merekam
-            sejarah nyata yang kaya akan hikmah. Salah satu kisah luar biasa
-            yang sangat dianjurkan untuk direnungkan—terutama pada hari
-            Jumat—adalah kisah <strong>Ashabul Kahfi</strong>. Mereka bukanlah
-            utusan seperti Nabi atau Rasul, melainkan sekelompok pemuda biasa
-            yang berusaha keras menjaga kemurnian tauhid di tengah rusaknya
-            moral masyarakat dan tiraninya seorang penguasa.
-          </p>
-
-          <h3 class="text-xl font-semibold text-gray-900 mt-8">
-            Latar Belakang dan Deklarasi Iman
-          </h3>
-          <p>
-            Peristiwa ini terjadi di bawah kekuasaan Raja Diqyanus (Decius) yang
-            bertangan besi. Ia mewajibkan seluruh rakyatnya untuk menyekutukan
-            Tuhan dengan menyembah berhala. Hukuman bagi yang menolak sangatlah
-            berat: kembali pada kemusyrikan atau dihukum mati.
-          </p>
-          <p>
-            Di tengah situasi kritis tersebut, sekelompok pemuda bangsawan
-            memilih untuk melawan arus. Mereka dengan berani menolak menukar
-            keimanan mereka dengan kenikmatan duniawi. Keberanian mereka saat
-            mendeklarasikan keesaan Allah diabadikan dalam Al-Qur'an:
-          </p>
+          <div
+            class="absolute w-32 h-32 sm:w-64 sm:h-64 bg-blue-100/60 rounded-full blur-3xl -top-20 -left-10 z-0 pointer-events-none"
+          ></div>
+          <div
+            class="absolute w-32 h-32 sm:w-64 sm:h-64 bg-indigo-100/60 rounded-full blur-3xl -bottom-20 -right-10 z-0 pointer-events-none"
+          ></div>
 
           <div
-            class="bg-gray-50 p-6 rounded-xl border border-gray-200 mt-4 mb-6"
+            class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4"
           >
-            <p
-              dir="rtl"
-              class="font-arabic text-3xl text-gray-800 leading-loose mb-4 text-right"
-            >
-              وَرَبَطْنَا عَلَىٰ قُلُوبِهِمْ إِذْ قَامُوا فَقَالُوا رَبُّنَا
-              رَبُّ السَّمَاوَاتِ وَالْأَرْضِ لَنْ نَدْعُوَ مِنْ دُونِهِ
-              إِلَٰهًا ۖ لَقَدْ قُلْنَا إِذًا شَطَطًا
-            </p>
-            <p class="italic text-gray-600 mb-2">
-              "Dan Kami telah meneguhkan hati mereka di waktu mereka berdiri,
-              lalu mereka pun berkata, 'Tuhan kami adalah Tuhan langit dan bumi;
-              kami sekali-kali tidak menyeru Tuhan selain Dia, sesungguhnya kami
-              kalau demikian telah mengucapkan perkataan yang amat jauh dari
-              kebenaran'." <strong>(QS. Al-Kahfi: 14)</strong>
-            </p>
-          </div>
-
-          <h3 class="text-xl font-semibold text-gray-900 mt-8">
-            Jalan Keluar: Mengasingkan Diri (Uzlah)
-          </h3>
-          <p>
-            Sadar bahwa dakwah secara terang-terangan tidak lagi memungkinkan
-            dan nyawa mereka terancam, para pemuda ini mengambil langkah
-            <i>hijrah</i> dengan cara mengasingkan diri ke sebuah gua di
-            perbukitan. Sebelum memasukinya, mereka memanjatkan doa memohon
-            jalan keluar (QS. Al-Kahfi: 10). Di sinilah intervensi dan
-            perlindungan Allah terjadi secara menakjubkan. Allah tidak sekadar
-            menyembunyikan mereka, tetapi membuat mereka tertidur lelap selama
-            <strong>309 tahun Hijriah</strong>.
-          </p>
-          <p>
-            Selama masa tertidur yang panjang itu, Allah memelihara jasad mereka
-            melalui beberapa cara:
-          </p>
-          <ul class="list-disc pl-5 space-y-2">
-            <li>
-              <strong>Pengaturan Sinar Matahari:</strong> Arah terbit dan
-              terbenamnya matahari diatur agar cahayanya tidak membakar kulit
-              mereka, namun tetap memberikan kehangatan yang cukup (QS.
-              Al-Kahfi: 17).
-            </li>
-            <li>
-              <strong>Rotasi Tubuh:</strong> Allah membolak-balikkan posisi
-              tubuh mereka ke kanan dan ke kiri agar fisik mereka tidak membusuk
-              atau menyatu dengan tanah (QS. Al-Kahfi: 18).
-            </li>
-            <li>
-              <strong>Penjagaan Ekstra:</strong> Seekor anjing peliharaan ikut
-              tertidur di pintu gua dengan kaki terjulur, memberikan kesan
-              menyeramkan yang mencegah siapa pun berani mendekat.
-            </li>
-          </ul>
-
-          <h3 class="text-xl font-semibold text-gray-900 mt-8">
-            Terbangun Sebagai Bukti Kebesaran Tuhan
-          </h3>
-          <p>
-            Ketika dibangunkan, mereka sama sekali tidak menyadari berapa lama
-            waktu telah berlalu. Mereka menduga hanya tertidur beberapa jam
-            saja. Tabir misteri baru terbuka ketika salah satu dari mereka pergi
-            ke pasar secara sembunyi-sembunyi untuk membeli makanan menggunakan
-            koin perak kuno era Raja Diqyanus.
-          </p>
-          <p>
-            Penduduk kota menjadi heboh. Dari peristiwa itulah terungkap bahwa
-            zaman telah berganti; raja zalim telah lama mati, dan masyarakat
-            kini dipenuhi oleh orang-orang yang beriman. Bangkitnya para pemuda
-            ini sekaligus menjadi jawaban dan bukti nyata dari Allah bagi
-            masyarakat saat itu yang sedang berdebat mengenai kebenaran adanya
-            hari kebangkitan setelah kematian.
-          </p>
-
-          <h3 class="text-xl font-semibold text-gray-900 mt-8">
-            Nilai Relevan untuk Generasi Masa Kini
-          </h3>
-          <p>
-            Kisah ini bukanlah sekadar catatan masa lalu, melainkan cetak biru
-            bagi generasi modern. Beberapa hikmah utama yang bisa kita petik
-            antara lain:
-          </p>
-          <ul class="list-disc pl-5 space-y-2 mb-8">
-            <li>
-              <strong>Ketahanan Prinsip:</strong> Di era yang penuh dengan
-              "berhala modern" seperti budaya pamer (hedonisme) dan
-              materialisme, mempertahankan keimanan membutuhkan perjuangan yang
-              luar biasa besar.
-            </li>
-            <li>
-              <strong>Keberanian Meninggalkan Lingkungan Toksik:</strong> Jika
-              sebuah komunitas atau lingkungan berpotensi merusak moral dan
-              keimanan, beranilah untuk meninggalkannya seperti pemuda Kahfi
-              yang lari dari kota mereka.
-            </li>
-            <li>
-              <strong>Kekuatan Tawakal:</strong> Senjata pertama yang digunakan
-              para pemuda itu saat terdesak adalah doa. Hal ini membuktikan
-              bahwa pertolongan Allah sangat nyata dan sering kali datang
-              melalui cara-cara yang melampaui logika manusia.
-            </li>
-          </ul>
-
-          <div class="mt-12 pt-6 border-t border-gray-200">
-            <h3 class="text-lg font-bold text-gray-900 mb-4">
-              Sumber Referensi
-            </h3>
-            <ul class="list-none space-y-2">
-              <li class="flex items-start">
-                <i class="fa-solid fa-link text-blue-500 mt-1 mr-3"></i>
-                <a
-                  href="https://bmm.or.id/artikel/kisah-ashabul-kahfi-lengkap-perjalanan-iman-pemuda-gua-yang-tidur-309-tahun-tafsir-surah-al-kahfi-gtc"
-                  target="_blank"
-                  class="text-blue-600 hover:underline hover:text-blue-800 transition-colors break-words"
+            <div class="w-full md:w-2/3 space-y-6 text-center md:text-left">
+              <div>
+                <h1
+                  class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight break-words"
                 >
-                  Baitul Maal Muamalat (BMM). "Kisah Ashabul Kahfi Lengkap:
-                  Perjalanan Iman Pemuda Gua yang Tidur 309 Tahun (Tafsir Surah
-                  Al-Kahfi)". Diakses pada 4 Agustus 2025.
-                </a>
-              </li>
-            </ul>
+                  <span id="dynamic-greeting" class="text-gray-800">Halo</span>,
+                  Saya <br class="hidden sm:block" />
+                  <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 relative inline-block group mt-1 md:mt-2"
+                  >
+                    Luthfi Ammar Musthofa
+                    <span
+                      class="absolute -bottom-1 left-0 w-full h-1 sm:h-1.5 bg-blue-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"
+                    ></span>
+                  </span>
+                </h1>
+              </div>
+
+              <div
+                class="flex flex-col sm:flex-row flex-wrap sm:items-center justify-center md:justify-start gap-3 sm:gap-4 text-sm text-gray-700 bg-white/90 backdrop-blur-sm p-4 rounded-xl border border-gray-100 shadow-sm mt-4 w-full md:w-max mx-auto md:mx-0 hover:shadow-md transition-shadow"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-lg shrink-0"
+                  >
+                    <i
+                      class="fa-solid fa-chalkboard-user text-blue-600 text-lg"
+                    ></i>
+                  </div>
+                  <div class="overflow-hidden text-left">
+                    <span
+                      class="block text-xs text-gray-500 uppercase font-semibold tracking-wide truncate"
+                      >Kelas</span
+                    >
+                    <span class="font-bold text-gray-900 truncate block"
+                      >I233D</span
+                    >
+                  </div>
+                </div>
+
+                <div class="hidden sm:block w-px h-10 bg-gray-200"></div>
+
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-lg shrink-0"
+                  >
+                    <i
+                      class="fa-solid fa-graduation-cap text-blue-600 text-lg"
+                    ></i>
+                  </div>
+                  <div class="overflow-hidden text-left">
+                    <span
+                      class="block text-xs text-gray-500 uppercase font-semibold tracking-wide truncate"
+                      >Mata Kuliah</span
+                    >
+                    <span class="font-bold text-gray-900 truncate block"
+                      >Pendidikan Agama 6</span
+                    >
+                  </div>
+                </div>
+
+                <div class="hidden sm:block w-px h-10 bg-gray-200"></div>
+
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-lg shrink-0"
+                  >
+                    <i class="fa-solid fa-user-tie text-blue-600 text-lg"></i>
+                  </div>
+                  <div class="overflow-hidden text-left">
+                    <span
+                      class="block text-xs text-gray-500 uppercase font-semibold tracking-wide truncate"
+                      >Dosen Pengampu</span
+                    >
+                    <span
+                      class="font-bold text-gray-900 truncate block text-xs sm:text-sm"
+                      >Ir. M. Zubair A., M.T.</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="w-full md:w-1/3 flex justify-center md:justify-end mt-4 md:mt-0"
+            >
+              <img
+                src="https://api.dicebear.com/9.x/toon-head/svg?clothesColor=0b3286&hair=sideComed&hairColor=2c1b18&seed=Kingston"
+                alt="avatar"
+              />
+            </div>
+          </div>
+        </header>
+      </div>
+
+      <main
+        class="max-w-5xl mx-auto px-4 sm:px-6 pb-24"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <div
+          class="bg-white rounded-xl shadow-sm border border-gray-100 p-2 mb-6 sticky top-[72px] sm:top-[76px] z-40 backdrop-blur-md bg-white/90 flex justify-between items-center gap-4 relative"
+        >
+          <div
+            class="absolute inset-0 bg-blue-50 blur-lg -z-10 rounded-xl opacity-50"
+          ></div>
+
+          <span class="text-sm font-bold text-gray-700 px-2 hidden sm:block"
+            >Pilih Materi Tugas:</span
+          >
+
+          <div class="relative w-full sm:w-64 z-50">
+            <button
+              id="dropdown-btn"
+              onclick="toggleDropdown()"
+              class="w-full flex justify-between items-center px-4 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg font-semibold text-sm shadow-md hover:shadow-lg transition-all"
+            >
+              <span id="dropdown-label"
+                ><i class="fa-solid fa-folder-open mr-2"></i> Pilih
+                Materi...</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-xs transition-transform duration-300"
+                id="dropdown-icon"
+              ></i>
+            </button>
+
+            <div
+              id="dropdown-menu"
+              class="hidden absolute top-full left-0 right-0 mt-2 bg-white border border-gray-100 rounded-xl shadow-xl overflow-hidden flex-col transform origin-top transition-all duration-200"
+            >
+              <button
+                onclick="selectTask('tugas1', 'Tugas 1', 'fa-file-pen')"
+                class="flex items-center w-full text-left px-4 py-3 hover:bg-blue-50 text-gray-700 font-medium transition-colors border-b border-gray-50"
+              >
+                <div class="w-6 text-center mr-2 text-blue-500">
+                  <i class="fa-solid fa-file-pen"></i>
+                </div>
+                Tugas 1
+              </button>
+
+              <button
+                onclick="selectTask('tugas5', 'Tugas 5', 'fa-file-lines')"
+                class="flex items-center w-full text-left px-4 py-3 hover:bg-blue-50 text-gray-700 font-medium transition-colors border-b border-gray-50"
+              >
+                <div class="w-6 text-center mr-2 text-blue-500">
+                  <i class="fa-solid fa-file-lines"></i>
+                </div>
+                Tugas 5
+              </button>
+
+              <button
+                onclick="
+                  selectTask(
+                    'uts',
+                    'Ujian Tengah Semester',
+                    'fa-clipboard-list',
+                  )
+                "
+                class="flex items-center w-full text-left px-4 py-3 hover:bg-blue-50 text-gray-700 font-medium transition-colors border-b border-gray-50"
+              >
+                <div class="w-6 text-center mr-2 text-blue-500">
+                  <i class="fa-solid fa-clipboard-list"></i>
+                </div>
+                UTS
+              </button>
+            </div>
           </div>
         </div>
-      </article>
-    </main>
+
+        <div
+          id="content-container"
+          class="min-h-[400px] w-full overflow-hidden bg-white/50 rounded-3xl border border-gray-100/50 flex flex-col items-center justify-center p-8"
+        >
+          <div
+            class="flex flex-col items-center justify-center pt-10 pb-16 opacity-80"
+          >
+            <div class="animate-bounce-high mb-6 text-blue-500/80">
+              <i
+                class="fa-solid fa-arrow-up-long text-6xl sm:text-7xl drop-shadow-md"
+              ></i>
+            </div>
+
+            <div class="relative">
+              <div
+                class="absolute inset-0 bg-blue-200 blur-2xl rounded-full animate-pulse opacity-50"
+              ></div>
+              <i
+                class="fa-solid fa-box-open text-7xl sm:text-9xl text-blue-400 relative z-10 drop-shadow-xl"
+              ></i>
+              <i
+                class="fa-solid fa-sparkles text-yellow-400 absolute -top-2 -right-4 text-3xl animate-pulse relative z-20"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <button
+      id="back-to-top"
+      class="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 bg-blue-600 text-white w-10 h-10 sm:w-12 sm:h-12 rounded-full shadow-lg shadow-blue-500/30 opacity-0 pointer-events-none transform translate-y-4 transition-all duration-300 hover:bg-blue-700 hover:-translate-y-1 z-50 flex items-center justify-center focus:outline-none"
+    >
+      <i class="fa-solid fa-arrow-up text-sm sm:text-base"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      function toggleDropdown() {
+        const menu = document.getElementById('dropdown-menu');
+        const icon = document.getElementById('dropdown-icon');
+
+        if (menu.classList.contains('hidden')) {
+          menu.classList.remove('hidden');
+          menu.classList.add('flex');
+          icon.classList.add('rotate-180');
+        } else {
+          menu.classList.add('hidden');
+          menu.classList.remove('flex');
+          icon.classList.remove('rotate-180');
+        }
+      }
+
+      window.addEventListener('click', function (e) {
+        const btn = document.getElementById('dropdown-btn');
+        const menu = document.getElementById('dropdown-menu');
+
+        if (
+          btn &&
+          menu &&
+          !btn.contains(e.target) &&
+          !menu.contains(e.target)
+        ) {
+          menu.classList.add('hidden');
+          menu.classList.remove('flex');
+          document
+            .getElementById('dropdown-icon')
+            .classList.remove('rotate-180');
+        }
+      });
+
+      async function loadContent(url) {
+        const container = document.getElementById('content-container');
+
+        container.innerHTML = `
+          <div class="flex flex-col justify-center items-center h-64 text-gray-400">
+            <i class="fa-solid fa-circle-notch fa-spin text-3xl sm:text-4xl text-blue-500 mb-4"></i>
+            <p class="text-sm font-medium animate-pulse">Menyiapkan materi...</p>
+          </div>
+        `;
+
+        try {
+          await new Promise((resolve) => setTimeout(resolve, 400));
+          const response = await fetch(url);
+          if (!response.ok) throw new Error('Gagal mengambil data');
+
+          container.innerHTML = await response.text();
+        } catch (error) {
+          container.innerHTML = `<div class="p-6 sm:p-8 text-center bg-red-50 rounded-2xl border border-red-100 text-red-600 text-sm sm:text-base shadow-sm"><i class="fa-solid fa-triangle-exclamation text-2xl mb-2"></i><br>Gagal memuat file tugas. Pastikan file berada di dalam folder "content".</div>`;
+        }
+      }
+
+      function selectTask(tabName, label, iconClass) {
+        document.getElementById('dropdown-label').innerHTML =
+          `<i class="fa-solid ${iconClass} mr-2"></i> ${label}`;
+
+        toggleDropdown();
+        loadContent(`./content/${tabName}.html`);
+
+        const containerTop =
+          document.getElementById('content-container').offsetTop;
+        window.scrollTo({ top: containerTop - 120, behavior: 'smooth' });
+      }
+
+      function setDynamicGreeting() {
+        const hour = new Date().getHours();
+        let greeting = 'Halo';
+        if (hour >= 4 && hour < 11) greeting = 'Selamat Pagi';
+        else if (hour >= 11 && hour < 15) greeting = 'Selamat Siang';
+        else if (hour >= 15 && hour < 18) greeting = 'Selamat Sore';
+        else greeting = 'Selamat Malam';
+        document.getElementById('dynamic-greeting').textContent = greeting;
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        setDynamicGreeting();
+
+        AOS.init({
+          duration: 800,
+          easing: 'ease-out-cubic',
+          once: true,
+        });
+      });
+
+      window.addEventListener('scroll', () => {
+        const winScroll =
+          document.body.scrollTop || document.documentElement.scrollTop;
+        const bttButton = document.getElementById('back-to-top');
+
+        if (winScroll > 300) {
+          bttButton.classList.remove(
+            'opacity-0',
+            'pointer-events-none',
+            'translate-y-4',
+          );
+          bttButton.classList.add('opacity-100', 'translate-y-0');
+        } else {
+          bttButton.classList.add(
+            'opacity-0',
+            'pointer-events-none',
+            'translate-y-4',
+          );
+          bttButton.classList.remove('opacity-100', 'translate-y-0');
+        }
+      });
+
+      document.getElementById('back-to-top').addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    </script>
   </body>
 </html>
